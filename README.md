@@ -1,0 +1,9 @@
+## Checking it out
+```sh
+# ui
+pnpm install
+pnpm dev
+
+# wasm build
+em++ main.cpp -o main.js   -s EXPORTED_FUNCTIONS='["_init","_player1_key_event", "_player2_key_event"]'   -s EXPORTED_RUNTIME_METHODS='["cwrap"]' -s ASYNCIFY -s MODULARIZE=1  -s EXPORT_ES6=1 -O2
+```
