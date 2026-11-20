@@ -1,14 +1,4 @@
 
-/*
-const moduleFns = {
-  game_init: (x: number, y: number) => { },
-  game_keydown: (key_code: number) => { },
-  game_keyup: (key_code: number) => { },
-  game_update: (fixed_dt: number) => { },
-  game_render: (dt: number, alpha: number) => { }
-}
-*/
-
 let module = null
 let offscreencanvas;
 let ctx;
