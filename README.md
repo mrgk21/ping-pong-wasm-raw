@@ -1,15 +1,41 @@
-## Checking it out
-```sh
-# ui
-pnpm install
-pnpm dev
+## Prerequisites
+- `clang` is required to build wasm
+- `pnpm` or `npm` for the node modules and svelte.
 
+### Using PNPM:
+```sh
+pnpm install
+```
+### Using NPM:
+```sh
+npm install
+```
+
+## Testing the game
+```sh
 # wasm build
-em++ main.cpp -o main.js   -s EXPORTED_FUNCTIONS='["_init","_player1_key_event", "_player2_key_event"]'   -s EXPORTED_RUNTIME_METHODS='["cwrap"]' -s ASYNCIFY -s MODULARIZE=1  -s EXPORT_ES6=1 -O2
+build.sh
+
+# start dev server
+npm run dev
+
+# or with pnpm
+pnpm dev
+```
+
+## For windows
+```bat
+# build wasm module
+build.bat
+
+# start dev server
+npm run dev
+
+# or with pnpm
+pnpm dev
 ```
 
 ## todo checklist
-
 ### performance / tech
 - shared memory buffer between cpp and js - reduce heap copying
 - debug routes for info on js dashboard
